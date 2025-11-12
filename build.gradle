@@ -1,0 +1,35 @@
+plugins {
+    id 'java'
+}
+
+group = 'com.flyaway.cdh'
+version = '1.0.0'
+
+java {
+    toolchain {
+        languageVersion = JavaLanguageVersion.of(21)
+    }
+}
+
+repositories {
+    mavenCentral()
+    maven {
+        name = "papermc"
+        url = "https://repo.papermc.io/repository/maven-public/"
+    }
+    maven {
+      name = "jitpack"
+      url = "https://jitpack.io/"
+    }
+    maven { url = 'https://maven.enginehub.org/repo/' }
+}
+
+dependencies {
+    compileOnly 'io.papermc.paper:paper-api:1.21.8-R0.1-SNAPSHOT'
+    compileOnly 'com.github.decentsoftware-eu:decentholograms:2.9.7'
+    compileOnly "com.sk89q.worldguard:worldguard-bukkit:7.0.14"
+}
+
+tasks.jar {
+    archiveBaseName.set("CustomDecentHolograms")
+}

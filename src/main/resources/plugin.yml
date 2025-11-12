@@ -1,0 +1,33 @@
+name: CustomDecentHolograms
+version: 1.0.0
+main: com.flyaway.cdh.CustomDecentHolograms
+api-version: 1.21
+author: FlyAwayMaking
+website: https://github.com/flyawaymaking
+depend: [DecentHolograms]
+softdepend: [WorldGuard]
+
+commands:
+  hg:
+    description: Управление голограммами
+    usage: /<command> <create|move|edit|addline|removeline|delete|list|formats|reload|hide|help>
+
+permissions:
+  cdh.*:
+    description: Все права плагина CustomDecentHolograms
+    children:
+      cdh.use: true
+      cdh.reload: true
+      cdh.bypass: true
+  cdh.use:
+    description: Создание голограмм
+    default: op
+  cdh.reload:
+    description: Перезагрузка конфигурации
+    default: op
+  cdh.bypass:
+    description: Обход ограничений
+    default: op
+  cdh.amount.*:
+    description: Все лимиты количества голограмм
+    default: op

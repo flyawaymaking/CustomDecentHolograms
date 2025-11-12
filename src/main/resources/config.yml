@@ -1,0 +1,84 @@
+# CustomDecentHolograms Configuration
+
+# Префикс для сообщений
+prefix: "<gray>[<green>Голограммы</green>]</gray>"
+
+# Настройки WorldGuard
+worldguard:
+  enabled: false
+
+# Лимиты
+limits:
+  max-lines: 6
+  max-line-length: 40
+
+# Строки, добавляемые в голограмму по умолчанию
+default-lines:
+  - "<#5BA4FA>&n&lГолограмма игрока {player}</#FF0000>"
+  - "<#EAEAEA>Редактировать строку <#A0A0A0>» <#5BFA6F>/hg edit {hologram} <строка> <текст>"
+  - "<#EAEAEA>Добавить строку <#A0A0A0>» <#5BFA6F>/hg addline {hologram} <текст>"
+  - "<#EAEAEA>Удалить строку <#A0A0A0>» <#5BFA6F>/hg removeline {hologram} <строка>"
+  - "<#EAEAEA>Показать все ваши голограммы <#A0A0A0>» <#5BFA6F>/hg list"
+  - "<#EAEAEA>Доступное форматирование <#A0A0A0>» <#5BFA6F>/hg formats"
+
+# Сообщения
+messages:
+  no-permission: "<red>У вас нет прав для использования этой команды!"
+  player-only: "<red>Эта команда только для игроков!"
+  hologram-created: "<green>Голограмма {hologram} успешно создана!"
+  hologram-limit-reached: "<red>Вы достигли лимита голограмм! Ваш лимит: {limit}"
+  worldguard-deny: "<red>Вы не можете создавать голограммы в этом регионе!"
+  invalid-arguments: "<red>Неверные аргументы команды!"
+  hologram-not-found: "<red>Голограмма не найдена!"
+  line-not-found: "<red>Линия не найдена!"
+  reload-success: "<green>Конфигурация перезагружена!"
+  hologram-already-exists: "<red>Голограмма с именем {hologram} уже существует!"
+  hologram-creation-failed: "<red>Не удалось создать голограмму {hologram}!"
+  hologram-moved: "<green>Голограмма {hologram} успешно перемещена!"
+  hologram-move-failed: "<red>Не удалось переместить голограмму {hologram}!"
+  invalid-line-number: "<red>Неверный номер строки!"
+  invalid-format: "<red>Некорректный формат текста! Используйте /hg formats для просмотра доступных форматов"
+  line-too-long: "<red>Слишком длинный текст! Максимум: {max} символов (без учета форматирования), у вас: {current}"
+  max-lines-reached: "<red>Достигнут лимит строк! Максимум: {max} строк, у вас: {current}"
+  line-edited: "<green>Строка {line} голограммы {hologram} успешно изменена!"
+  line-edit-failed: "<red>Не удалось изменить строку {line} голограммы {hologram}!"
+  line-added: "<green>Строка успешно добавлена к голограмме {hologram}!"
+  line-add-failed: "<red>Не удалось добавить строку к голограмме {hologram}!"
+  line-removed: "<green>Строка {line} голограммы {hologram} успешно удалена!"
+  line-remove-failed: "<red>Не удалось удалить строку {line} голограммы {hologram}!"
+  help-message: "<yellow>Используйте /hg create <имя> для создания голограммы</yellow>"
+  no-holograms: "<yellow>У вас нет созданных голограмм!"
+  all-holograms-hidden: "<green>Все ваши голограммы скрыты!"
+  all-holograms-shown: "<green>Все ваши голограммы показаны!"
+  hologram-hidden: "<green>Голограмма {hologram} скрыта!"
+  hologram-shown: "<green>Голограмма {hologram} показана!"
+  hologram-deleted: "<green>Голограмма {hologram} успешно удалена!"
+  hologram-delete-failed: "<red>Не удалось удалить голограмму {hologram}!"
+  list-header: "<green>Ваши голограммы ({count}):"
+  list-item: "  <white>{index}. {name}</white>"
+  # Сообщения для команды help
+  help-commands:
+    - "<green>Доступные команды:"
+    - "  <white>/hg create <имя></white> <gray>- Создать голограмму в текущем месте"
+    - "  <white>/hg move <имя></white> <gray>- Переместить голограмму к себе"
+    - "  <white>/hg edit <имя> <строка> <текст></white> <gray>- Изменить строку голограммы"
+    - "  <white>/hg addline <имя> <текст></white> <gray>- Добавить строку к голограмме"
+    - "  <white>/hg removeline <имя> <строка></white> <gray>- Удалить строку голограммы"
+    - "  <white>/hg hide <имя></white> <gray>- Скрыть/показать голограмму(ы)"
+    - "  <white>/hg delete <имя></white> <gray>- Удалить голограмму"
+    - "  <white>/hg list</white> <gray>- Показать ваши голограммы"
+    - "  <white>/hg formats</white> <gray>- Показать доступные форматы"
+    - "  <white>/hg help</white> <gray>- Показать эту помощь"
+    - "  <white>/hg reload</white> <gray>- Перезагрузить конфигурацию <dark_gray>(требует права)</dark_gray>"
+  help-limit: "  <gray>Ваш лимит голограмм: <white>{limit}</white>"
+  # Список сообщений для команды formats
+  formats-list:
+    - "<yellow>Доступные форматы в голограммах:</gray>"
+    - "<gold>#ICON: <white><item></white>"
+    - "<white>&l = <bold>ЖИРНЫЙ</bold></white>"
+    - "<white>&o = <italic>Курсив</italic></white>"
+    - "<white>&n = <underlined>Подчёркнутый</underlined></white>"
+    - "<white>&m = <strikethrough>Зачёркнутый</strikethrough></white>"
+    - "<white>Простые цвета: <dark_green>&a</dark_green>, <aqua>&b</aqua>, <red>&c</red>, <light_purple>&d</light_purple>, <yellow>&e</yellow>, <white>&f</white>, <dark_blue>&1</dark_blue>, <dark_green>&2</dark_green>, <dark_aqua>&3</dark_aqua>, <dark_red>&4</dark_red>, <dark_purple>&5</dark_purple>, <gold>&6</gold>, <gray>&7</gray>, <dark_gray>&8</dark_gray>, <blue>&9</blue>"
+    - "<white>RGB цвет:</white> <blue>&#0000FF</blue>"
+    - "<gray>Градиент:</gray> <gradient:#FF0000:#00FF00>\\<#FF0000>Текст\\</#00FF00></gradient>"
